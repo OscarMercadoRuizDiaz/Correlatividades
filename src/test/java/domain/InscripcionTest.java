@@ -15,7 +15,7 @@ class InscripcionTest {
     Alumno juan = new Alumno("Juan");
 
     @Test
-    @DisplayName("Se aprueba la inscripción al pasar las correlativas correctas")
+    @DisplayName("Se aprueba la inscripción al pasar materias que cumplen las correlativas")
     public void seApruebaInscripcion() {
         juan.agregarMateriasAprobadas(discreta, algoritmos, inglesUno);
         Inscripcion inscripcion = new Inscripcion(juan, Set.of(inglesDos, paradigmas));
@@ -27,7 +27,7 @@ class InscripcionTest {
     }
 
     @Test
-    @DisplayName("No se aprueba la inscripción porque le falta una materia")
+    @DisplayName("NO se aprueba la inscripción porque no se cumplen las correlativas de una sola materia")
     public void noSeApruebaInscripcion() {
         juan.agregarMateriasAprobadas(discreta, inglesUno);
         Inscripcion inscripcion = new Inscripcion(juan, Set.of(inglesDos, paradigmas));
@@ -37,6 +37,5 @@ class InscripcionTest {
 
         Assertions.assertFalse(inscripcion.aprobada());
     }
-
 
 }

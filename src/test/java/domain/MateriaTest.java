@@ -21,7 +21,7 @@ class MateriaTest {
     }
 
     @Test
-    @DisplayName("No se cumplen las correlativas cuando no le pasan todas sus correlativas")
+    @DisplayName("NO se cumplen las correlativas cuando no le pasan todas sus correlativas")
     public void correlativasIncorrectas() {
         paradigmas.agregarCorrelativas(algoritmos, discreta);
 
